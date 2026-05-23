@@ -1,32 +1,16 @@
 <p align="center">
-  <h1 align="center">🤷 kind</h1>
+  <h1 align="center" id="-kind">🤷 kind</h1>
   <p align="center"><i>A development toolkit for Ruby with several small/cohesive abstractions to empower your development workflow - It's totally free of dependencies.</i></p>
-</p>
-
-<p align="center">
-  <a href="https://rubygems.org/gems/kind">
-    <img alt="Gem" src="https://img.shields.io/gem/v/kind.svg?style=flat-square">
-  </a>
-
-  <a href="https://github.com/serradura/kind/actions/workflows/ci.yml">
-    <img alt="Build Status" src="https://github.com/serradura/kind/actions/workflows/ci.yml/badge.svg">
-  </a>
-
-  <br />
-
-  <img src="https://img.shields.io/badge/ruby%20%3E=%202.7-ruby.svg?colorA=99004d&colorB=cc0066" alt="Ruby">
-
-  <img src="https://img.shields.io/badge/rails%20%3E=%206.0-rails.svg?colorA=8B0000&colorB=FF0000" alt="Rails">
-
-  <br />
-
-  <a href="https://qlty.sh/gh/serradura/projects/kind">
-    <img alt="Maintainability" src="https://qlty.sh/gh/serradura/projects/kind/maintainability.svg">
-  </a>
-
-  <a href="https://qlty.sh/gh/serradura/projects/kind">
-    <img alt="Code Coverage" src="https://qlty.sh/gh/serradura/projects/kind/coverage.svg">
-  </a>
+  <p align="center">
+    <a href="https://badge.fury.io/rb/kind"><img src="https://badge.fury.io/rb/kind.svg" alt="Gem Version" height="18"></a>
+    <a href="https://github.com/serradura/kind/actions/workflows/ci.yml"><img alt="Build Status" src="https://github.com/serradura/kind/actions/workflows/ci.yml/badge.svg"></a>
+    <br/>
+    <a href="https://qlty.sh/gh/serradura/projects/kind"><img src="https://qlty.sh/gh/serradura/projects/kind/maintainability.svg" alt="Maintainability" /></a>
+    <a href="https://qlty.sh/gh/serradura/projects/kind"><img src="https://qlty.sh/gh/serradura/projects/kind/coverage.svg" alt="Code Coverage" /></a>
+    <br/>
+    <img src="https://img.shields.io/badge/Ruby%20%3E%3D%202.7%2C%20%3C%3D%20Head-ruby.svg?colorA=444&colorB=333" alt="Ruby">
+    <img src="https://img.shields.io/badge/Rails%20%3E%3D%206.0%2C%20%3C%3D%20Edge-rails.svg?colorA=444&colorB=333" alt="Rails">
+  </p>
 </p>
 
 **Motivation:**
@@ -42,11 +26,8 @@ So, I invite you to check out these features to see how they could be useful for
 Version    | Documentation
 ---------- | -------------
 unreleased | https://github.com/serradura/kind/blob/main/README.md
+6.0.0      | https://github.com/serradura/kind/blob/v6.x/README.md
 5.10.0     | https://github.com/serradura/kind/blob/v5.x/README.md
-4.1.0      | https://github.com/serradura/kind/blob/v4.x/README.md
-3.1.0      | https://github.com/serradura/kind/blob/v3.x/README.md
-2.3.0      | https://github.com/serradura/kind/blob/v2.x/README.md
-1.9.0      | https://github.com/serradura/kind/blob/v1.x/README.md
 
 ## Table of Contents <!-- omit in toc -->
 - [Compatibility](#compatibility)
@@ -122,14 +103,24 @@ unreleased | https://github.com/serradura/kind/blob/main/README.md
 
 ## Compatibility
 
-| kind           | branch  | ruby               | activemodel    |
-| -------------- | ------- | ------------------ | -------------- |
-| unreleased     | main    | >= 2.1.0, <= 3.0.0 | >= 3.2, < 7.0  |
-| 5.10.0         | v5.x    | >= 2.1.0, <= 3.0.0 | >= 3.2, < 7.0  |
-| 4.1.0          | v4.x    | >= 2.2.0, <= 3.0.0 | >= 3.2, < 7.0  |
-| 3.1.0          | v3.x    | >= 2.2.0, <= 2.7   | >= 3.2, < 7.0  |
-| 2.3.0          | v2.x    | >= 2.2.0, <= 2.7   | >= 3.2, <= 6.0 |
-| 1.9.0          | v1.x    | >= 2.2.0, <= 2.7   | >= 3.2, <= 6.0 |
+| kind             | branch | ruby     | activemodel    |
+| ---------------- | ------ | -------- | -------------- |
+| unreleased       | main   | >= 2.7   | >= 6.0         |
+| 6.0.0            | v6.x   | >= 2.7   | >= 6.0         |
+| 5.10.0           | v5.x   | >= 2.1.0, <= 3.0.0 | >= 3.2, < 7.0  |
+
+This library is tested (CI matrix) against:
+
+| Ruby / Rails | 6.0 | 6.1 | 7.0 | 7.1 | 7.2 | 8.0 | 8.1 | Edge |
+|--------------|-----|-----|-----|-----|-----|-----|-----|------|
+| 2.7          | ✅  | ✅  | ✅  | ✅  |     |     |     |      |
+| 3.0          | ✅  | ✅  | ✅  | ✅  |     |     |     |      |
+| 3.1          |     |     | ✅  | ✅  | ✅  |     |     |      |
+| 3.2          |     |     | ✅  | ✅  | ✅  | ✅  |     |      |
+| 3.3          |     |     | ✅  | ✅  | ✅  | ✅  | ✅  | ✅   |
+| 3.4          |     |     |     |     | ✅  | ✅  | ✅  | ✅   |
+| 4.x          |     |     |     |     |     |     | ✅  | ✅   |
+| Head         |     |     |     |     |     |     | ✅  | ✅   |
 
 > Note: The activemodel is an optional dependency, it is related with the [Kind::Validator](#kindvalidator-activemodelvalidations).
 
@@ -138,7 +129,7 @@ unreleased | https://github.com/serradura/kind/blob/main/README.md
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'kind'
+gem 'kind', '~> 6.0'
 ```
 
 And then execute:
