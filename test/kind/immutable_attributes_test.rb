@@ -227,7 +227,7 @@ class KindImmutableAttributesTest < Minitest::Test
 
     assert_raises_with_message(
       NoMethodError,
-      /private method `password' called for #<KindImmutableAttributesTest::User1/
+      /private method [`']password['].+KindImmutableAttributesTest::User1/
     ) { user1.password }
 
     # --
@@ -239,7 +239,7 @@ class KindImmutableAttributesTest < Minitest::Test
 
     assert_raises_with_message(
       NoMethodError,
-      /private method `password' called for #<KindImmutableAttributesTest::User1/
+      /private method [`']password['].+KindImmutableAttributesTest::User1/
     ) { user2.password }
 
     assert_equal('password', user2.__password__)
@@ -279,7 +279,7 @@ class KindImmutableAttributesTest < Minitest::Test
 
     assert_raises_with_message(
       NoMethodError,
-      /protected method `password' called for #<KindImmutableAttributesTest::User2/
+      /protected method [`']password['].+KindImmutableAttributesTest::User2/
     ) { user1.password }
 
     # --
@@ -291,7 +291,7 @@ class KindImmutableAttributesTest < Minitest::Test
 
     assert_raises_with_message(
       NoMethodError,
-      /protected method `password' called for #<KindImmutableAttributesTest::User2/
+      /protected method [`']password['].+KindImmutableAttributesTest::User2/
     ) { user2.password }
 
     assert_equal('password', user2.__password__)
@@ -359,7 +359,7 @@ class KindImmutableAttributesTest < Minitest::Test
 
     assert_raises_with_message(
       NoMethodError,
-      /protected method `password' called for #<KindImmutableAttributesTest::UserEntity/
+      /protected method [`']password['].+KindImmutableAttributesTest::UserEntity/
     ) { user_entity.password }
 
     assert_equal('password', user_entity.__password__)

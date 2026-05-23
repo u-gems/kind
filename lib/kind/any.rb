@@ -27,12 +27,12 @@ module Kind
     end
 
     def name
-      str = @values.inspect
-
-      if @values.is_a?(::Set)
-        str.sub!(/\A#<Set: /, '')
-        str.chomp!('>')
-      end
+      str =
+        if @values.is_a?(::Set)
+          "{#{@values.to_a.map(&:inspect).join(', ')}}"
+        else
+          @values.inspect
+        end
 
       "Kind::Any#{str}"
     end

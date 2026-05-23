@@ -187,7 +187,7 @@ class KindActionTest < Minitest::Test
     s = Sum.allocate
     s.send(:initialize, {})
 
-    assert_equal('#<KindActionTest::Sum attributes={:a=>nil, :b=>nil} nil_attributes=[:a, :b]>', s.inspect)
+    assert_equal("#<KindActionTest::Sum attributes=#{ {a: nil, b: nil}.inspect } nil_attributes=[:a, :b]>", s.inspect)
   end
 
   class Foo
