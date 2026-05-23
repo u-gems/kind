@@ -1,30 +1,20 @@
-if RUBY_VERSION >= '2.4.0'
-  require 'simplecov'
+require 'simplecov'
 
-  SimpleCov.start do
-    add_filter '/test/'
-    add_filter '/lib/kind/active_model/validation.rb'
+SimpleCov.start do
+  add_filter '/test/'
+  add_filter '/lib/kind/active_model/validation.rb'
 
-    enable_coverage :branch if RUBY_VERSION >= '2.5.0'
-  end
+  enable_coverage :branch
 end
 
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
 require 'kind' if ENV.fetch('KIND_BASIC', '').empty?
 
-ENV.fetch('ACTIVEMODEL_VERSION', '7.0.0').tap do |active_model_version|
-  if active_model_version < '7.0.0'
-    require 'kind/active_model/validation'
-  end
+active_model_version = ENV.fetch('ACTIVEMODEL_VERSION', '7.0.0')
 
-  if (RUBY_VERSION < '2.3.0' || active_model_version < '4.1')
-    require 'minitest/unit'
-
-    module Minitest
-      Test = MiniTest::Unit::TestCase
-    end
-  end
+if active_model_version < '7.0.0'
+  require 'kind/active_model/validation'
 end
 
 require_relative 'support/kind_is_test'

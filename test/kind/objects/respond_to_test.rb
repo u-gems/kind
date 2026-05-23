@@ -4,7 +4,7 @@ class Kind::RespondToTest < Minitest::Test
   def test_the_constructor
     assert_raises_with_message(
       NoMethodError,
-      /private method `new' called for Kind::RespondTo:Class/
+      /private method [`']new['].+Kind::RespondTo/
     ) { Kind::RespondTo.new([:fetch]) }
 
     assert_raises_with_message(

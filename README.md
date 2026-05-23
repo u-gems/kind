@@ -14,18 +14,18 @@
 
   <br />
 
-  <img src="https://img.shields.io/badge/ruby%20%3E=%202.1,%20%3C%203.1-ruby.svg?colorA=99004d&colorB=cc0066" alt="Ruby">
+  <img src="https://img.shields.io/badge/ruby%20%3E=%202.7-ruby.svg?colorA=99004d&colorB=cc0066" alt="Ruby">
 
-  <img src="https://img.shields.io/badge/rails%20%3E=%203.2.0,%20%3C%207.0-rails.svg?colorA=8B0000&colorB=FF0000" alt="Rails">
+  <img src="https://img.shields.io/badge/rails%20%3E=%206.0-rails.svg?colorA=8B0000&colorB=FF0000" alt="Rails">
 
   <br />
 
-  <a href="https://codeclimate.com/github/serradura/kind/maintainability">
-    <img alt="Maintainability" src="https://api.codeclimate.com/v1/badges/711329decb2806ccac95/maintainability">
+  <a href="https://qlty.sh/gh/serradura/projects/kind">
+    <img alt="Maintainability" src="https://qlty.sh/gh/serradura/projects/kind/maintainability.svg">
   </a>
 
-  <a href="https://codeclimate.com/github/serradura/kind/test_coverage">
-    <img alt="Test Coverage" src="https://api.codeclimate.com/v1/badges/711329decb2806ccac95/test_coverage">
+  <a href="https://qlty.sh/gh/serradura/projects/kind">
+    <img alt="Code Coverage" src="https://qlty.sh/gh/serradura/projects/kind/coverage.svg">
   </a>
 </p>
 

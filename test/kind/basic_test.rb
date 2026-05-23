@@ -329,22 +329,22 @@ class Kind::KindTest < Minitest::Test
 
     assert_raises_with_message(
       KeyError,
-      '{:a=>1, :b=>1} expected to have these keys: [:c]'
+      "#{h1.inspect} expected to have these keys: [:c]"
     ) { Kind.assert_hash!(h1, keys: [:a, :b, :c], require_all: true) }
 
     assert_raises_with_message(
       KeyError,
-      '{:a=>1, :b=>1} expected to NOT have these keys: [:b]'
+      "#{h1.inspect} expected to NOT have these keys: [:b]"
     ) { Kind.assert_hash!(h1, keys: [:a], require_all: true) }
 
     assert_raises_with_message(
       KeyError,
-      '{:a=>1, :b=>1} expected to NOT have these keys: [:a]'
+      "#{h1.inspect} expected to NOT have these keys: [:a]"
     ) { Kind.assert_hash!(h1, keys: :b, require_all: true) }
 
     assert_raises_with_message(
       KeyError,
-      '{"a"=>1, "b"=>2} expected to have these keys: [:a, :b]'
+      "#{h2.inspect} expected to have these keys: [:a, :b]"
     ) { Kind.assert_hash!(h2, keys: [:a, :b], require_all: true) }
 
     # --
@@ -353,22 +353,22 @@ class Kind::KindTest < Minitest::Test
 
     assert_raises_with_message(
       KeyError,
-      '{"a"=>1, "b"=>2} expected to have these keys: ["c"]'
+      "#{h2.inspect} expected to have these keys: [\"c\"]"
     ) { Kind.assert_hash!(h2, keys: ['a', 'b', 'c'], require_all: true) }
 
     assert_raises_with_message(
       KeyError,
-      '{"a"=>1, "b"=>2} expected to NOT have these keys: ["a"]'
+      "#{h2.inspect} expected to NOT have these keys: [\"a\"]"
     ) { Kind.assert_hash!(h2, keys: ['b'], require_all: true) }
 
     assert_raises_with_message(
       KeyError,
-      '{"a"=>1, "b"=>2} expected to NOT have these keys: ["b"]'
+      "#{h2.inspect} expected to NOT have these keys: [\"b\"]"
     ) { Kind.assert_hash!(h2, keys: 'a', require_all: true) }
 
     assert_raises_with_message(
       KeyError,
-      '{:a=>1, :b=>1} expected to have these keys: ["a", "b"]'
+      "#{h1.inspect} expected to have these keys: [\"a\", \"b\"]"
     ) { Kind.assert_hash!(h1, keys: ['a', 'b'], require_all: true) }
   end
 
@@ -441,7 +441,7 @@ class Kind::KindTest < Minitest::Test
 
     assert_raises_with_message(
       KeyError,
-      '{:email=>"", :number=>1} expected to NOT have these keys: [:number]'
+      "#{h1.inspect} expected to NOT have these keys: [:number]"
     ) { Kind.assert_hash!(h1, require_all: true, schema: {email: String}) }
 
     # --
