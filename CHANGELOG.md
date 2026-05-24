@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.1] - 2026-05-24
+### Added
+- This `CHANGELOG.md`, rewritten to follow the [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/) spec and backfilled to cover every tagged release from `0.1.0` through `6.0.1` (including the previously undocumented `3.0.1` patch and the `6.0.0` major).
+- `bug_tracker_uri` entry in `spec.metadata` so RubyGems.org surfaces a direct link to the issue tracker from the gem page.
+
 ## [6.0.0] - 2026-05-23
 ### Changed
 - **BREAKING:** Bumped minimum Ruby to **2.7.0** (Ruby 2.1 – 2.6 are EOL and no longer supported).
@@ -432,6 +437,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Kind::Types.add(<Type>)` for registering new type checkers. Registration adds `Kind.of.<Type>(value)` / `Kind.is.<Type>(other)` methods and a `Kind::Of::<Type>` module exposing `class?`, `instance?`, `or_nil`.
 - Register the `String` and `Hash` type checkers: `Kind::Of::Hash` / `Kind::Is::Hash`, `Kind::Of::String` / `Kind::Is::String`.
 
+[6.0.1]: https://github.com/serradura/kind/compare/v6.0.0...v6.0.1
 [6.0.0]: https://github.com/serradura/kind/compare/v5.10.0...v6.0.0
 [5.10.0]: https://github.com/serradura/kind/compare/v5.9.0...v5.10.0
 [5.9.0]: https://github.com/serradura/kind/compare/v5.8.1...v5.9.0
