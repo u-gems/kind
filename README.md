@@ -26,7 +26,7 @@ So, I invite you to check out these features to see how they could be useful for
 Version    | Documentation
 ---------- | -------------
 unreleased | https://github.com/serradura/kind/blob/main/README.md
-6.0.0      | https://github.com/serradura/kind/blob/v6.x/README.md
+6.0.1      | https://github.com/serradura/kind/blob/v6.x/README.md
 5.10.0     | https://github.com/serradura/kind/blob/v5.x/README.md
 
 ## Table of Contents <!-- omit in toc -->
@@ -106,7 +106,7 @@ unreleased | https://github.com/serradura/kind/blob/main/README.md
 | kind             | branch | ruby     | activemodel    |
 | ---------------- | ------ | -------- | -------------- |
 | unreleased       | main   | >= 2.7   | >= 6.0         |
-| 6.0.0            | v6.x   | >= 2.7   | >= 6.0         |
+| 6.0.1            | v6.x   | >= 2.7   | >= 6.0         |
 | 5.10.0           | v5.x   | >= 2.1.0, <= 3.0.0 | >= 3.2, < 7.0  |
 
 This library is tested (CI matrix) against:
