@@ -8,13 +8,13 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{A development toolkit for Ruby with several small/cohesive abstractions to empower your development workflow.}
   spec.description   = %q{A development toolkit for Ruby with several small/cohesive abstractions (monads, enums, business logic, data validation...) to empower your development workflow - It's totally free of dependencies.}
-  spec.homepage      = 'https://github.com/serradura/kind'
+  spec.homepage      = 'https://github.com/u-gems/kind'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.7.0')
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/serradura/kind'
-  spec.metadata['changelog_uri'] = 'https://github.com/serradura/kind/blob/main/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/u-gems/kind'
+  spec.metadata['changelog_uri'] = 'https://github.com/u-gems/kind/blob/main/CHANGELOG.md'
   spec.metadata['bug_tracker_uri'] = "#{spec.homepage}/issues"
 
   # Specify which files should be added to the gem when it is released.

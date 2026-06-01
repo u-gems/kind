@@ -3,7 +3,7 @@
   <p align="center"><i>A development toolkit for Ruby with several small/cohesive abstractions to empower your development workflow - It's totally free of dependencies.</i></p>
   <p align="center">
     <a href="https://badge.fury.io/rb/kind"><img src="https://badge.fury.io/rb/kind.svg" alt="Gem Version" height="18"></a>
-    <a href="https://github.com/serradura/kind/actions/workflows/ci.yml"><img alt="Build Status" src="https://github.com/serradura/kind/actions/workflows/ci.yml/badge.svg"></a>
+    <a href="https://github.com/u-gems/kind/actions/workflows/ci.yml"><img alt="Build Status" src="https://github.com/u-gems/kind/actions/workflows/ci.yml/badge.svg"></a>
     <br/>
     <a href="https://qlty.sh/gh/u-gems/projects/kind"><img src="https://qlty.sh/gh/u-gems/projects/kind/maintainability.svg" alt="Maintainability" /></a>
     <a href="https://qlty.sh/gh/u-gems/projects/kind"><img src="https://qlty.sh/gh/u-gems/projects/kind/coverage.svg" alt="Code Coverage" /></a>
@@ -23,11 +23,11 @@ So, I invite you to check out these features to see how they could be useful for
 
 ## Documentation <!-- omit in toc -->
 
-| Version    | Documentation                                         |
-| ---------- | ----------------------------------------------------- |
-| unreleased | https://github.com/serradura/kind/blob/main/README.md |
-| 6.0.1      | https://github.com/serradura/kind/blob/v6.x/README.md |
-| 5.10.0     | https://github.com/serradura/kind/blob/v5.x/README.md |
+| Version    | Documentation                                      |
+| ---------- | -------------------------------------------------- |
+| unreleased | https://github.com/u-gems/kind/blob/main/README.md |
+| 6.0.1      | https://github.com/u-gems/kind/blob/v6.x/README.md |
+| 5.10.0     | https://github.com/u-gems/kind/blob/v5.x/README.md |
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -862,9 +862,9 @@ This module also has the method `to_proc`, because of this you can make use of t
 
 ## Kind::Undefined
 
-The [`Kind::Undefined`](https://github.com/serradura/kind/blob/main/lib/kind/basic/undefined.rb) constant can be used to distinguish the usage of `nil`.
+The [`Kind::Undefined`](https://github.com/u-gems/kind/blob/main/lib/kind/basic/undefined.rb) constant can be used to distinguish the usage of `nil`.
 
-If you are interested, check out [the tests](https://github.com/serradura/kind/blob/main/test/kind/basic/undefined_test.rb) to understand its methods.
+If you are interested, check out [the tests](https://github.com/u-gems/kind/blob/main/test/kind/basic/undefined_test.rb) to understand its methods.
 
 [⬆️ &nbsp;Back to Top](#table-of-contents-)
 
@@ -1647,7 +1647,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/serradura/kind. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/serradura/kind/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/u-gems/kind. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/u-gems/kind/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -1655,4 +1655,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Kind project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/serradura/kind/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Kind project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/u-gems/kind/blob/master/CODE_OF_CONDUCT.md).
