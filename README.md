@@ -5,8 +5,8 @@
     <a href="https://badge.fury.io/rb/kind"><img src="https://badge.fury.io/rb/kind.svg" alt="Gem Version" height="18"></a>
     <a href="https://github.com/serradura/kind/actions/workflows/ci.yml"><img alt="Build Status" src="https://github.com/serradura/kind/actions/workflows/ci.yml/badge.svg"></a>
     <br/>
-    <a href="https://qlty.sh/gh/serradura/projects/kind"><img src="https://qlty.sh/gh/serradura/projects/kind/maintainability.svg" alt="Maintainability" /></a>
-    <a href="https://qlty.sh/gh/serradura/projects/kind"><img src="https://qlty.sh/gh/serradura/projects/kind/coverage.svg" alt="Code Coverage" /></a>
+    <a href="https://qlty.sh/gh/u-gems/projects/kind"><img src="https://qlty.sh/gh/u-gems/projects/kind/maintainability.svg" alt="Maintainability" /></a>
+    <a href="https://qlty.sh/gh/u-gems/projects/kind"><img src="https://qlty.sh/gh/u-gems/projects/kind/coverage.svg" alt="Code Coverage" /></a>
     <br/>
     <img src="https://img.shields.io/badge/Ruby%20%3E%3D%202.7%2C%20%3C%3D%20Head-ruby.svg?colorA=444&colorB=333" alt="Ruby">
     <img src="https://img.shields.io/badge/Rails%20%3E%3D%206.0%2C%20%3C%3D%20Edge-rails.svg?colorA=444&colorB=333" alt="Rails">
@@ -17,19 +17,20 @@
 
 This project was born to help me with a simple task, create a light and fast type checker (at runtime) for Ruby. The initial idea was to have something to raise an exception when a method or function (procs) received a wrong input.
 
-But through time it was natural the addition of more features to improve the development workflow, like monads ([`Kind::Maybe`](#kindmaybe), `Kind::Either` / `Kind::Result`),  enums (`Kind::Enum`), immutable objects (`Kind::ImmutableAttributes`), [type validation via ActiveModel::Validation](#kindvalidator-activemodelvalidations), and several abstractions to help the implementation of business logic (`Kind::Functional::Steps`, `Kind::Functional::Action`, `Kind::Action`).
+But through time it was natural the addition of more features to improve the development workflow, like monads ([`Kind::Maybe`](#kindmaybe), `Kind::Either` / `Kind::Result`), enums (`Kind::Enum`), immutable objects (`Kind::ImmutableAttributes`), [type validation via ActiveModel::Validation](#kindvalidator-activemodelvalidations), and several abstractions to help the implementation of business logic (`Kind::Functional::Steps`, `Kind::Functional::Action`, `Kind::Action`).
 
 So, I invite you to check out these features to see how they could be useful for you. Enjoy!
 
 ## Documentation <!-- omit in toc -->
 
-Version    | Documentation
----------- | -------------
-unreleased | https://github.com/serradura/kind/blob/main/README.md
-6.0.1      | https://github.com/serradura/kind/blob/v6.x/README.md
-5.10.0     | https://github.com/serradura/kind/blob/v5.x/README.md
+| Version    | Documentation                                         |
+| ---------- | ----------------------------------------------------- |
+| unreleased | https://github.com/serradura/kind/blob/main/README.md |
+| 6.0.1      | https://github.com/serradura/kind/blob/v6.x/README.md |
+| 5.10.0     | https://github.com/serradura/kind/blob/v5.x/README.md |
 
 ## Table of Contents <!-- omit in toc -->
+
 - [Compatibility](#compatibility)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -67,7 +68,7 @@ unreleased | https://github.com/serradura/kind/blob/main/README.md
     - [Kind::Presence](#kindpresence)
 - [Kind::Undefined](#kindundefined)
 - [Kind::Maybe](#kindmaybe)
-    - [Replacing blocks by lambdas](#replacing-blocks-by-lambdas)
+  - [Replacing blocks by lambdas](#replacing-blocks-by-lambdas)
   - [Kind::Maybe[], Kind::Maybe.wrap() and Kind::Maybe#then method aliases](#kindmaybe-kindmaybewrap-and-kindmaybethen-method-aliases)
     - [Replacing blocks by lambdas](#replacing-blocks-by-lambdas-1)
   - [Kind::None() and Kind::Some()](#kindnone-and-kindsome)
@@ -103,16 +104,16 @@ unreleased | https://github.com/serradura/kind/blob/main/README.md
 
 ## Compatibility
 
-| kind             | branch | ruby     | activemodel    |
-| ---------------- | ------ | -------- | -------------- |
-| unreleased       | main   | >= 2.7   | >= 6.0         |
-| 6.0.1            | v6.x   | >= 2.7   | >= 6.0         |
-| 5.10.0           | v5.x   | >= 2.1.0, <= 3.0.0 | >= 3.2, < 7.0  |
+| kind       | branch | ruby               | activemodel   |
+| ---------- | ------ | ------------------ | ------------- |
+| unreleased | main   | >= 2.7             | >= 6.0        |
+| 6.0.1      | v6.x   | >= 2.7             | >= 6.0        |
+| 5.10.0     | v5.x   | >= 2.1.0, <= 3.0.0 | >= 3.2, < 7.0 |
 
 This library is tested (CI matrix) against:
 
 | Ruby / Rails | 6.0 | 6.1 | 7.0 | 7.1 | 7.2 | 8.0 | 8.1 | Edge |
-|--------------|-----|-----|-----|-----|-----|-----|-----|------|
+| ------------ | --- | --- | --- | --- | --- | --- | --- | ---- |
 | 2.7          | ✅  | ✅  | ✅  | ✅  |     |     |     |      |
 | 3.0          | ✅  | ✅  | ✅  | ✅  |     |     |     |      |
 | 3.1          |     |     | ✅  | ✅  | ✅  |     |     |      |
@@ -256,6 +257,7 @@ collection.map(&Kind::Hash.or(:foo)) # Kind::Error (:foo expected to be a kind o
 ### Kind::\<Type\>.value()
 
 This method ensures that you will have a value of the expected kind. But, in the case of the given value be invalid, this method will require a default value (with the expected kind) to be returned.
+
 ```ruby
 Kind::String.value(1, default: '')   # ""
 
@@ -324,6 +326,7 @@ collection.select(&Kind::Enumerable?) # [{:number=>1}, {:number=>3}, [:number, 5
 ### Kind::{Array,Hash,String,Set}.empty_or()
 
 This method is available for some type handlers (`Kind::Array`, `Kind::Hash`, `Kind::String`, `Kind::Set`), and it will return an empty frozen value if the given one hasn't the expected kind.
+
 ```ruby
 Kind::Array.empty_or({})         # []
 Kind::Array.empty_or({}).frozen? # true
@@ -335,38 +338,38 @@ Kind::Array.empty_or({}).frozen? # true
 
 #### Core
 
-* `Kind::Array`
-* `Kind::Class`
-* `Kind::Comparable`
-* `Kind::Enumerable`
-* `Kind::Enumerator`
-* `Kind::File`
-* `Kind::Float`
-* `Kind::Hash`
-* `Kind::Integer`
-* `Kind::IO`
-* `Kind::Method`
-* `Kind::Module`
-* `Kind::Numeric`
-* `Kind::Proc`
-* `Kind::Queue`
-* `Kind::Range`
-* `Kind::Regexp`
-* `Kind::String`
-* `Kind::Struct`
-* `Kind::Symbol`
-* `Kind::Time`
+- `Kind::Array`
+- `Kind::Class`
+- `Kind::Comparable`
+- `Kind::Enumerable`
+- `Kind::Enumerator`
+- `Kind::File`
+- `Kind::Float`
+- `Kind::Hash`
+- `Kind::Integer`
+- `Kind::IO`
+- `Kind::Method`
+- `Kind::Module`
+- `Kind::Numeric`
+- `Kind::Proc`
+- `Kind::Queue`
+- `Kind::Range`
+- `Kind::Regexp`
+- `Kind::String`
+- `Kind::Struct`
+- `Kind::Symbol`
+- `Kind::Time`
 
 #### Stdlib
 
-* `Kind::OpenStruct`
-* `Kind::Set`
+- `Kind::OpenStruct`
+- `Kind::Set`
 
 #### Custom
 
-* `Kind::Boolean`
-* `Kind::Callable`
-* `Kind::Lambda`
+- `Kind::Boolean`
+- `Kind::Callable`
+- `Kind::Lambda`
 
 [⬆️ &nbsp;Back to Top](#table-of-contents-)
 
@@ -600,19 +603,21 @@ Kind.of_module_or_class(1)      # Kind::Error (1 expected to be a kind of Module
 #### Kind.respond_to()
 
 this method returns the given object if it responds to all of the method names. But if the object does not respond to some of the expected methods, an error will be raised.
-  ```ruby
-  Kind.respond_to('', :upcase)         # ""
-  Kind.respond_to('', :upcase, :strip) # ""
 
-  Kind.respond_to(1, :upcase)        # expected 1 to respond to :upcase
-  Kind.respond_to(2, :to_s, :upcase) # expected 2 to respond to :upcase
-  ```
+```ruby
+Kind.respond_to('', :upcase)         # ""
+Kind.respond_to('', :upcase, :strip) # ""
+
+Kind.respond_to(1, :upcase)        # expected 1 to respond to :upcase
+Kind.respond_to(2, :to_s, :upcase) # expected 2 to respond to :upcase
+```
 
 [⬆️ &nbsp;Back to Top](#table-of-contents-)
 
 #### Kind.of()
 
 There is a second way to do a strict type verification, you can use the `Kind.of()` method to do this. It receives the kind as the first argument and the value to be checked as the second one.
+
 ```ruby
 Kind.of(Hash, {}) # {}
 Kind.of(Hash, []) # Kind::Error ([] expected to be a kind of Hash)
@@ -646,6 +651,7 @@ If the method receives only the first argument (the kind) a lambda will be retur
 #### Kind.value()
 
 This method ensures that you will have a value of the expected kind. But, in the case of the given value be invalid, this method will require a default value (with the expected kind) to be returned.
+
 ```ruby
 Kind.value(String, '1', default: '') # "1"
 
@@ -986,7 +992,7 @@ Kind::Maybe[nil].then(&Add).value_or(0) # 0
 
 ### Kind::None() and Kind::Some()
 
-If you need to ensure the return of  `Kind::Maybe` results from your methods/lambdas,
+If you need to ensure the return of `Kind::Maybe` results from your methods/lambdas,
 you could use the methods `Kind::None` and `Kind::Some` to do this. e.g:
 
 ```ruby
@@ -1604,8 +1610,9 @@ Kind::Validator.default_strategy = :instance_of
 ```
 
 And these are the available options to define the default strategy:
--  `kind_of` *(default)*
--  `instance_of`
+
+- `kind_of` _(default)_
+- `instance_of`
 
 [⬆️ &nbsp;Back to Top](#table-of-contents-)
 
